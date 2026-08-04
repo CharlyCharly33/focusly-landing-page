@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Focusly te ayuda a organizar tareas, concentrarte y visualizar tu progreso diario.">
+  <title>Focusly | Enfócate en lo importante</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header" id="inicio">
+    <div class="container nav-wrapper">
+      <a class="brand" href="#inicio" aria-label="Focusly, ir al inicio"><span class="brand-mark">f</span>Focusly</a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#funciones">Funciones</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#opiniones">Opiniones</a>
+        <a class="button button-small" href="#comenzar">Comenzar gratis</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Productividad con intención</p>
+          <h1 id="hero-title">Enfócate en lo importante. <span>Logra más cada día.</span></h1>
+          <p class="hero-description">Focusly combina sesiones de concentración, organización de tareas y estadísticas de productividad para ayudarte a trabajar mejor sin sentirte abrumado.</p>
+          <div class="hero-actions">
+            <a class="button" href="#comenzar">Comenzar gratis <span aria-hidden="true">→</span></a>
+            <a class="text-button" href="#como-funciona">Ver cómo funciona <span class="play-icon" aria-hidden="true">▶</span></a>
+          </div>
+          <div class="trust-line"><span class="trust-avatars"><b>MA</b><b>JL</b><b>RG</b></span><span>Únete a más de <strong>12.000 personas</strong> enfocadas.</span></div>
+        </div>
+
+        <div class="app-showcase reveal" aria-label="Demostración de la aplicación Focusly">
+          <div class="orb orb-one"></div><div class="orb orb-two"></div>
+          <div class="app-window">
+            <aside class="app-sidebar">
+              <span class="app-logo">f</span>
+              <span class="sidebar-icon active">⌂</span><span class="sidebar-icon">✓</span><span class="sidebar-icon">◔</span><span class="sidebar-icon">⚙</span>
+            </aside>
+            <div class="app-content">
+              <div class="app-topbar"><div><p>Martes, 18 de junio</p><h2>Buenos días, Marina <span>✦</span></h2></div><div class="profile-dot">M</div></div>
+              <div class="focus-card">
+                <div class="focus-card-head"><span>SESIÓN DE ENFOQUE</span><span class="live-tag"><i></i> En curso</span></div>
+                <div class="timer-wrap"><div class="timer-ring"><strong id="timer-display" aria-live="polite">25:00</strong><small>Enfoque</small></div></div>
+                <p class="current-task"><span>✦</span> Preparar propuesta de diseño</p>
+                <div class="timer-controls">
+                  <button class="timer-button primary" id="timer-toggle" type="button">Iniciar sesión</button>
+                  <button class="timer-button reset" id="timer-reset" type="button" aria-label="Reiniciar temporizador">↺</button>
+                </div>
+              </div>
+              <div class="app-bottom-grid">
+                <div class="task-panel"><div class="panel-title"><strong>Mis tareas</strong><button type="button" class="add-task" aria-label="Añadir tarea">+</button></div><div class="task-row done"><span>✓</span><p>Revisar objetivos del día</p></div><div class="task-row"><span></span><p>Preparar propuesta de diseño</p><b>Hoy</b></div><div class="task-row"><span></span><p>Responder correos pendientes</p></div></div>
+                <div class="daily-panel"><p>PROGRESO DIARIO</p><strong>72<small>%</small></strong><div class="mini-progress"><span></span></div><small>3 de 4 metas completadas</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="floating-note"><span>✓</span><div><strong>¡Excelente ritmo!</strong><small>Llevas 3 días de constancia</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-benefits" aria-label="Beneficios principales">
+      <div class="container quick-benefits-grid reveal">
+        <div><span class="quick-icon purple">◎</span><p><strong>Más concentración</strong><small>Una tarea a la vez</small></p></div>
+        <div><span class="quick-icon green">⌁</span><p><strong>Menos distracciones</strong><small>Tu espacio de calma</small></p></div>
+        <div><span class="quick-icon orange">▣</span><p><strong>Mejor organización</strong><small>Todo bajo control</small></p></div>
+        <div><span class="quick-icon blue">↗</span><p><strong>Progreso visible</strong><small>Avances que motivan</small></p></div>
+      </div>
+    </section>
+
+    <section class="section features" id="funciones" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-heading reveal"><p class="eyebrow">Todo en un solo lugar</p><h2 id="features-title">Herramientas simples para días <span>más productivos.</span></h2><p>Diseñadas para que dediques tu energía a lo que de verdad importa.</p></div>
+        <div class="features-grid">
+          <article class="feature-card reveal"><span class="feature-icon violet">◷</span><h3>Temporizador de enfoque</h3><p>Trabaja en bloques de tiempo que respetan tu energía y atención.</p><a href="#como-funciona" aria-label="Conocer cómo funciona el temporizador">Conocer más <span>→</span></a></article>
+          <article class="feature-card reveal"><span class="feature-icon blue">☑</span><h3>Gestión de tareas</h3><p>Prioriza, ordena y visualiza cada tarea sin listas interminables.</p><a href="#como-funciona" aria-label="Conocer cómo funciona la gestión de tareas">Conocer más <span>→</span></a></article>
+          <article class="feature-card reveal"><span class="feature-icon green">▥</span><h3>Estadísticas claras</h3><p>Entiende tus patrones y celebra cada avance de tu semana.</p><a href="#resultados" aria-label="Ver estadísticas de productividad">Conocer más <span>→</span></a></article>
+          <article class="feature-card reveal"><span class="feature-icon orange">◐</span><h3>Modo sin distracciones</h3><p>Un entorno sereno para entrar en tu mejor estado de flujo.</p><a href="#comenzar" aria-label="Probar modo sin distracciones">Conocer más <span>→</span></a></article>
+          <article class="feature-card reveal"><span class="feature-icon pink">◎</span><h3>Metas diarias</h3><p>Define objetivos realistas y avanza con claridad cada día.</p><a href="#beneficios" aria-label="Conocer beneficios de las metas diarias">Conocer más <span>→</span></a></article>
+          <article class="feature-card reveal"><span class="feature-icon teal">↻</span><h3>Seguimiento de hábitos</h3><p>Convierte pequeños esfuerzos consistentes en una rutina duradera.</p><a href="#beneficios" aria-label="Conocer el seguimiento de hábitos">Conocer más <span>→</span></a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section how-it-works" id="como-funciona" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-heading centered reveal"><p class="eyebrow">Un método que se adapta a ti</p><h2 id="how-title">Tu día más enfocado empieza en <span>tres pasos.</span></h2></div>
+        <div class="steps-grid">
+          <article class="step reveal"><div class="step-number">01</div><div class="step-visual task-visual"><span class="tiny-line long"></span><span class="tiny-check">✓</span><span class="tiny-line medium"></span><span class="tiny-line short"></span></div><h3>Organiza tus tareas</h3><p>Elige lo esencial y deja claro qué merece tu atención hoy.</p></article>
+          <article class="step reveal"><div class="step-number">02</div><div class="step-visual focus-visual"><div>25<span>:00</span></div><small>Sesión de enfoque</small></div><h3>Inicia una sesión</h3><p>Activa el temporizador y crea espacio para el trabajo profundo.</p></article>
+          <article class="step reveal"><div class="step-number">03</div><div class="step-visual chart-visual"><i></i><i></i><i></i><i></i><i></i><span>+18%</span></div><h3>Analiza tu progreso</h3><p>Descubre tu ritmo, reconoce avances y ajusta tu rutina.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section results" id="resultados" aria-labelledby="results-title">
+      <div class="container results-layout">
+        <div class="results-copy reveal"><p class="eyebrow light">Tu esfuerzo se nota</p><h2 id="results-title">Mira cómo cada sesión construye <span>tu mejor versión.</span></h2><p>Focusly convierte tu compromiso diario en información simple y motivadora para seguir adelante.</p><a class="button button-light" href="#comenzar">Empieza a medir tu avance <span>→</span></a></div>
+        <div class="stats-dashboard reveal">
+          <div class="stats-top"><p>Resumen de esta semana</p><span>18 - 24 Jun <b>⌄</b></span></div>
+          <div class="stat-cards"><div><span class="stat-icon purple-bg">◷</span><p>Sesiones<span>12</span></p><small>↑ 20% esta semana</small></div><div><span class="stat-icon green-bg">◔</span><p>Horas de enfoque<span>4h</span></p><small>↑ 45 min más</small></div></div>
+          <div class="chart-card"><div class="chart-heading"><div><p>Productividad</p><strong>85% <small>↑ 12%</small></strong></div><span>Últimos 7 días</span></div><div class="bar-chart" aria-label="Gráfico de productividad semanal"><div class="bar-42"><i></i><small>L</small></div><div class="bar-58"><i></i><small>M</small></div><div class="bar-48"><i></i><small>X</small></div><div class="bar-78"><i></i><small>J</small></div><div class="bar-65"><i></i><small>V</small></div><div class="bar-88"><i></i><small>S</small></div><div class="bar-72"><i></i><small>D</small></div></div></div>
+          <div class="streak"><span>✦</span><p><strong>7 días de constancia</strong><small>Tu mejor racha hasta ahora. ¡Sigue así!</small></p><b>→</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section benefits" id="beneficios" aria-labelledby="benefits-title">
+      <div class="container benefits-layout">
+        <div class="benefits-art reveal"><div class="calm-circle"><span>✦</span><div class="leaf leaf-left"></div><div class="leaf leaf-right"></div></div><div class="art-note top-note">✓ Tarea completada</div><div class="art-note bottom-note"><span>◷</span> 4h de enfoque</div></div>
+        <div class="benefits-copy reveal"><p class="eyebrow">Más que una lista de pendientes</p><h2 id="benefits-title">Crea una forma de trabajar que <span>te haga bien.</span></h2><p>La productividad no es hacer más, es hacer lo que importa con energía y claridad.</p><ul class="benefits-list"><li><span>✓</span><div><strong>Evita la procrastinación</strong><p>Convierte tareas grandes en el siguiente paso posible.</p></div></li><li><span>✓</span><div><strong>Trabaja con objetivos claros</strong><p>Empieza cada día sabiendo dónde poner tu foco.</p></div></li><li><span>✓</span><div><strong>Mantén descansos saludables</strong><p>Tu ritmo sostenible vale más que correr sin pausa.</p></div></li><li><span>✓</span><div><strong>Reconoce tus avances</strong><p>Construye una rutina que te dé ganas de continuar.</p></div></li></ul></div>
+      </div>
+    </section>
+
+    <section class="section testimonials" id="opiniones" aria-labelledby="testimonials-title">
+      <div class="container"><div class="section-heading centered reveal"><p class="eyebrow">Historias reales</p><h2 id="testimonials-title">Personas que recuperaron el control <span>de su tiempo.</span></h2></div><div class="testimonials-grid"><article class="testimonial-card reveal"><div class="quote-mark">“</div><p>Focusly me ayudó a dejar de saltar entre tareas. Ahora termino mi jornada sabiendo que avancé en lo importante.</p><div class="person"><span class="avatar avatar-one">LM</span><div><strong>Laura Méndez</strong><small>Diseñadora freelance</small></div></div></article><article class="testimonial-card featured-testimonial reveal"><div class="quote-mark">“</div><p>Lo que más valoro es ver mi progreso. Las pequeñas sesiones se convirtieron en una rutina que realmente puedo mantener.</p><div class="person"><span class="avatar avatar-two">CR</span><div><strong>Carlos Ruiz</strong><small>Desarrollador de producto</small></div></div></article><article class="testimonial-card reveal"><div class="quote-mark">“</div><p>Es simple, tranquilo y no me exige ser perfecta. Focusly me devuelve la claridad cuando mi lista se siente enorme.</p><div class="person"><span class="avatar avatar-three">AS</span><div><strong>Ana Sofía Torres</strong><small>Estudiante de medicina</small></div></div></article></div></div>
+    </section>
+
+    <section class="cta section" id="comenzar" aria-labelledby="cta-title"><div class="container cta-box reveal"><div class="cta-decoration one"></div><div class="cta-decoration two"></div><p class="eyebrow light">Tu momento es ahora</p><h2 id="cta-title">Tu próximo gran logro comienza con una sesión de enfoque.</h2><p>Empieza hoy. Sin tarjetas, sin presión, a tu propio ritmo.</p><a class="button button-light" href="#inicio">Probar Focusly gratis <span>→</span></a><small>✓ Gratis para siempre · ✓ Sin tarjeta de crédito</small></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><a class="brand" href="#inicio"><span class="brand-mark">f</span>Focusly</a><p>El espacio tranquilo para hacer lo que importa.</p><div class="social-links"><a href="#inicio" aria-label="LinkedIn">in</a><a href="#inicio" aria-label="Instagram">◎</a><a href="#inicio" aria-label="X">𝕏</a></div></div><div><h3>Producto</h3><a href="#funciones">Funciones</a><a href="#como-funciona">Cómo funciona</a><a href="#resultados">Estadísticas</a></div><div><h3>Focusly</h3><a href="#beneficios">Beneficios</a><a href="#opiniones">Opiniones</a><a href="#comenzar">Comenzar gratis</a></div><div><h3>Legal</h3><a href="#inicio">Privacidad</a><a href="#inicio">Términos de uso</a><a href="#inicio">Contacto</a></div></div><div class="container footer-bottom"><p>© <span id="current-year"></span> Focusly. Hecho para enfocarte.</p><a href="#inicio">Volver arriba ↑</a></div></footer>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
