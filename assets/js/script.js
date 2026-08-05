@@ -4,14 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const navigation = document.querySelector('.main-nav');
   const navLinks = document.querySelectorAll('.main-nav a');
   const year = document.querySelector('#current-year');
-  const timerDisplay = document.querySelector('#timer-display');
-  const timerToggle = document.querySelector('#timer-toggle');
-  const timerReset = document.querySelector('#timer-reset');
-  const addTaskButton = document.querySelector('.add-task');
-  const taskPanel = document.querySelector('.task-panel');
-  const initialSeconds = 25 * 60;
-  let remainingSeconds = initialSeconds;
-  let timerId = null;
+  const registration = document.querySelector('#registro');
+  const form = document.querySelector('#signup-form');
+  const passwordToggle = document.querySelector('.password-toggle');
+  const successState = document.querySelector('#signup-success');
+  const successBack = document.querySelector('#success-back');
+  const signupHeading = document.querySelector('.signup-heading');
+  const signupLogin = document.querySelector('.signup-login');
+  const signupTrust = document.querySelector('.signup-trust');
+  const fields = {
+    name: document.querySelector('#full-name'),
+    email: document.querySelector('#email'),
+    password: document.querySelector('#password'),
+    goal: document.querySelector('#goal'),
+    terms: document.querySelector('#terms')
+  };
 
   year.textContent = new Date().getFullYear();
 
@@ -40,55 +47,88 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(link.getAttribute('href'));
       if (!target) return;
       event.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      if (target === registration) {
+        window.setTimeout(() => fields.name.focus({ preventScroll: true }), 500);
+      }
     });
   });
 
-  const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainder = seconds % 60;
-    return `${String(minutes).padStart(2, '0')}:${String(remainder).padStart(2, '0')}`;
+  const errorFor = (field) => document.querySelector(`#${field.id}-error`);
+
+  const setError = (field, message) => {
+    const error = errorFor(field);
+    const group = field.closest('.form-field');
+    error.textContent = message;
+    field.setAttribute('aria-invalid', String(Boolean(message)));
+    if (group) group.classList.toggle('invalid', Boolean(message));
   };
 
-  const renderTimer = () => { timerDisplay.textContent = formatTime(remainingSeconds); };
+  const validateField = (field) => {
+    const value = field.value.trim();
+    let message = '';
 
-  const stopTimer = () => {
-    window.clearInterval(timerId);
-    timerId = null;
-    timerToggle.textContent = remainingSeconds === 0 ? 'Iniciar sesión' : 'Reanudar sesión';
+    if (field === fields.name && !value) message = 'Escribe tu nombre completo.';
+    if (field === fields.email) {
+      if (!value) message = 'Escribe tu correo electrónico.';
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) message = 'Introduce un correo válido.';
+    }
+    if (field === fields.password) {
+      if (!value) message = 'Crea una contraseña para tu cuenta.';
+      else if (value.length < 8) message = 'La contraseña debe tener al menos 8 caracteres.';
+    }
+    if (field === fields.goal && !value) message = 'Selecciona una opción.';
+    if (field === fields.terms && !field.checked) message = 'Debes aceptar los términos para continuar.';
+
+    setError(field, message);
+    return !message;
   };
 
-  timerToggle.addEventListener('click', () => {
-    if (timerId) {
-      stopTimer();
+  Object.values(fields).forEach((field) => {
+    const eventName = field.type === 'checkbox' || field.tagName === 'SELECT' ? 'change' : 'input';
+    field.addEventListener(eventName, () => validateField(field));
+  });
+
+  passwordToggle.addEventListener('click', () => {
+    const isVisible = fields.password.type === 'text';
+    fields.password.type = isVisible ? 'password' : 'text';
+    passwordToggle.setAttribute('aria-pressed', String(!isVisible));
+    passwordToggle.setAttribute('aria-label', isVisible ? 'Mostrar contraseña' : 'Ocultar contraseña');
+    passwordToggle.querySelector('span').textContent = isVisible ? '◉' : '◌';
+    fields.password.focus();
+  });
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const isValid = Object.values(fields).map(validateField).every(Boolean);
+    if (!isValid) {
+      const firstInvalid = form.querySelector('[aria-invalid="true"]');
+      if (firstInvalid) firstInvalid.focus();
       return;
     }
 
-    if (remainingSeconds === 0) remainingSeconds = initialSeconds;
-    timerToggle.textContent = 'Pausar sesión';
-    timerId = window.setInterval(() => {
-      remainingSeconds -= 1;
-      renderTimer();
-      if (remainingSeconds === 0) stopTimer();
-    }, 1000);
+    form.hidden = true;
+    signupHeading.hidden = true;
+    signupLogin.hidden = true;
+    signupTrust.hidden = true;
+    successState.hidden = false;
+    successBack.focus();
   });
 
-  timerReset.addEventListener('click', () => {
-    window.clearInterval(timerId);
-    timerId = null;
-    remainingSeconds = initialSeconds;
-    renderTimer();
-    timerToggle.textContent = 'Iniciar sesión';
-  });
-
-  addTaskButton.addEventListener('click', () => {
-    if (taskPanel.querySelector('.task-row.added')) return;
-    const task = document.createElement('div');
-    task.className = 'task-row added';
-    task.innerHTML = '<span></span><p>Definir la próxima prioridad</p>';
-    taskPanel.appendChild(task);
-    addTaskButton.textContent = '✓';
-    addTaskButton.setAttribute('aria-label', 'Tarea añadida');
+  successBack.addEventListener('click', () => {
+    form.reset();
+    Object.values(fields).forEach((field) => setError(field, ''));
+    fields.password.type = 'password';
+    passwordToggle.setAttribute('aria-pressed', 'false');
+    passwordToggle.setAttribute('aria-label', 'Mostrar contraseña');
+    passwordToggle.querySelector('span').textContent = '◉';
+    successState.hidden = true;
+    signupHeading.hidden = false;
+    form.hidden = false;
+    signupLogin.hidden = false;
+    signupTrust.hidden = false;
+    fields.name.focus();
   });
 
   const revealElements = document.querySelectorAll('.reveal');

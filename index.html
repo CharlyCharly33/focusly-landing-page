@@ -20,7 +20,7 @@
         <a href="#como-funciona">Cómo funciona</a>
         <a href="#beneficios">Beneficios</a>
         <a href="#opiniones">Opiniones</a>
-        <a class="button button-small" href="#comenzar">Comenzar gratis</a>
+        <a class="button button-small" href="#registro">Comenzar gratis</a>
       </nav>
     </div>
   </header>
@@ -33,37 +33,63 @@
           <h1 id="hero-title">Enfócate en lo importante. <span>Logra más cada día.</span></h1>
           <p class="hero-description">Focusly combina sesiones de concentración, organización de tareas y estadísticas de productividad para ayudarte a trabajar mejor sin sentirte abrumado.</p>
           <div class="hero-actions">
-            <a class="button" href="#comenzar">Comenzar gratis <span aria-hidden="true">→</span></a>
+            <a class="button" href="#registro">Comenzar gratis <span aria-hidden="true">→</span></a>
             <a class="text-button" href="#como-funciona">Ver cómo funciona <span class="play-icon" aria-hidden="true">▶</span></a>
           </div>
           <div class="trust-line"><span class="trust-avatars"><b>MA</b><b>JL</b><b>RG</b></span><span>Únete a más de <strong>12.000 personas</strong> enfocadas.</span></div>
         </div>
 
-        <div class="app-showcase reveal" aria-label="Demostración de la aplicación Focusly">
+        <div class="app-showcase signup-showcase reveal">
           <div class="orb orb-one"></div><div class="orb orb-two"></div>
-          <div class="app-window">
-            <aside class="app-sidebar">
-              <span class="app-logo">f</span>
-              <span class="sidebar-icon active">⌂</span><span class="sidebar-icon">✓</span><span class="sidebar-icon">◔</span><span class="sidebar-icon">⚙</span>
-            </aside>
-            <div class="app-content">
-              <div class="app-topbar"><div><p>Martes, 18 de junio</p><h2>Buenos días, Marina <span>✦</span></h2></div><div class="profile-dot">M</div></div>
-              <div class="focus-card">
-                <div class="focus-card-head"><span>SESIÓN DE ENFOQUE</span><span class="live-tag"><i></i> En curso</span></div>
-                <div class="timer-wrap"><div class="timer-ring"><strong id="timer-display" aria-live="polite">25:00</strong><small>Enfoque</small></div></div>
-                <p class="current-task"><span>✦</span> Preparar propuesta de diseño</p>
-                <div class="timer-controls">
-                  <button class="timer-button primary" id="timer-toggle" type="button">Iniciar sesión</button>
-                  <button class="timer-button reset" id="timer-reset" type="button" aria-label="Reiniciar temporizador">↺</button>
-                </div>
+          <div class="signup-card" id="registro" tabindex="-1">
+            <div class="signup-heading">
+              <span class="signup-logo" aria-hidden="true">f</span>
+              <h2>Crea tu cuenta gratis</h2>
+              <p>Organiza tus tareas, mejora tu enfoque y alcanza tus objetivos con Focusly.</p>
+            </div>
+            <form class="signup-form" id="signup-form" novalidate>
+              <div class="form-field">
+                <label for="full-name">Nombre completo</label>
+                <input id="full-name" name="full-name" type="text" placeholder="Ej. Carlos Hernández" autocomplete="name" required aria-describedby="full-name-error">
+                <p class="field-error" id="full-name-error" role="alert"></p>
               </div>
-              <div class="app-bottom-grid">
-                <div class="task-panel"><div class="panel-title"><strong>Mis tareas</strong><button type="button" class="add-task" aria-label="Añadir tarea">+</button></div><div class="task-row done"><span>✓</span><p>Revisar objetivos del día</p></div><div class="task-row"><span></span><p>Preparar propuesta de diseño</p><b>Hoy</b></div><div class="task-row"><span></span><p>Responder correos pendientes</p></div></div>
-                <div class="daily-panel"><p>PROGRESO DIARIO</p><strong>72<small>%</small></strong><div class="mini-progress"><span></span></div><small>3 de 4 metas completadas</small></div>
+              <div class="form-field">
+                <label for="email">Correo electrónico</label>
+                <input id="email" name="email" type="email" placeholder="nombre@correo.com" autocomplete="email" required aria-describedby="email-error">
+                <p class="field-error" id="email-error" role="alert"></p>
               </div>
+              <div class="form-field">
+                <label for="password">Contraseña</label>
+                <div class="password-input"><input id="password" name="password" type="password" placeholder="Mínimo 8 caracteres" autocomplete="new-password" required aria-describedby="password-error"><button class="password-toggle" type="button" aria-label="Mostrar contraseña" aria-pressed="false"><span aria-hidden="true">◉</span></button></div>
+                <p class="field-error" id="password-error" role="alert"></p>
+              </div>
+              <div class="form-field">
+                <label for="goal">¿Qué quieres mejorar?</label>
+                <select id="goal" name="goal" required aria-describedby="goal-error">
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option value="tareas">Organizar mis tareas</option>
+                  <option value="concentracion">Mejorar mi concentración</option>
+                  <option value="habitos">Crear mejores hábitos</option>
+                  <option value="proyectos">Administrar mis proyectos</option>
+                </select>
+                <p class="field-error" id="goal-error" role="alert"></p>
+              </div>
+              <div class="terms-field">
+                <input id="terms" name="terms" type="checkbox" required aria-describedby="terms-error">
+                <label for="terms">Acepto los <a href="#inicio">términos de uso</a> y la <a href="#inicio">política de privacidad</a>.</label>
+              </div>
+              <p class="field-error terms-error" id="terms-error" role="alert"></p>
+              <button class="button signup-submit" type="submit">Crear mi cuenta gratis <span aria-hidden="true">→</span></button>
+            </form>
+            <p class="signup-login">¿Ya tienes una cuenta? <a href="#registro">Inicia sesión</a></p>
+            <p class="signup-trust"><span aria-hidden="true">✓</span> Sin tarjeta de crédito <i>·</i> Configuración en menos de 2 minutos</p>
+            <div class="signup-success" id="signup-success" role="status" aria-live="polite" hidden>
+              <span class="success-icon" aria-hidden="true">✓</span>
+              <h2>¡Cuenta creada correctamente!</h2>
+              <p>Tu espacio de productividad está listo.</p>
+              <button class="success-back" id="success-back" type="button">Volver al formulario</button>
             </div>
           </div>
-          <div class="floating-note"><span>✓</span><div><strong>¡Excelente ritmo!</strong><small>Llevas 3 días de constancia</small></div></div>
         </div>
       </div>
     </section>
