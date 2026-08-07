@@ -54,6 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(link.getAttribute('href'));
       if (!target) return;
       event.preventDefault();
+      if (target.id === 'inicio') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
       target.scrollIntoView({ behavior: 'smooth', block: target === registration ? 'center' : 'start' });
       if (target === registration) {
         window.setTimeout(() => activeFirstField().focus({ preventScroll: true }), 500);
