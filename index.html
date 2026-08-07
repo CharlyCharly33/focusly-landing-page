@@ -42,52 +42,41 @@
         <div class="app-showcase signup-showcase reveal">
           <div class="orb orb-one"></div><div class="orb orb-two"></div>
           <div class="signup-card" id="registro" tabindex="-1">
-            <div class="signup-heading">
-              <span class="signup-logo" aria-hidden="true">f</span>
-              <h2>Crea tu cuenta gratis</h2>
-              <p>Organiza tus tareas, mejora tu enfoque y alcanza tus objetivos con Focusly.</p>
+            <div class="auth-view" id="register-view">
+              <div class="signup-heading">
+                <span class="signup-logo" aria-hidden="true">f</span>
+                <h2>Crea tu cuenta gratis</h2>
+                <p>Organiza tus tareas, mejora tu enfoque y alcanza tus objetivos con Focusly.</p>
+              </div>
+              <form class="signup-form" id="signup-form" novalidate>
+                <div class="form-field"><label for="full-name">Nombre completo</label><input id="full-name" name="full-name" type="text" placeholder="Ej. Carlos Hernández" autocomplete="name" required aria-describedby="full-name-error"><p class="field-error" id="full-name-error" role="alert"></p></div>
+                <div class="form-field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" placeholder="nombre@correo.com" autocomplete="email" required aria-describedby="email-error"><p class="field-error" id="email-error" role="alert"></p></div>
+                <div class="form-field"><label for="password">Contraseña</label><div class="password-input"><input id="password" name="password" type="password" placeholder="Mínimo 8 caracteres" autocomplete="new-password" required aria-describedby="password-error"><button class="password-toggle" type="button" data-password-toggle="password" aria-label="Mostrar contraseña" aria-pressed="false"><span aria-hidden="true">◉</span></button></div><p class="field-error" id="password-error" role="alert"></p></div>
+                <div class="form-field"><label for="goal">¿Qué quieres mejorar?</label><select id="goal" name="goal" required aria-describedby="goal-error"><option value="" selected disabled>Selecciona una opción</option><option value="tareas">Organizar mis tareas</option><option value="concentracion">Mejorar mi concentración</option><option value="habitos">Crear mejores hábitos</option><option value="proyectos">Administrar mis proyectos</option></select><p class="field-error" id="goal-error" role="alert"></p></div>
+                <div class="terms-field"><input id="terms" name="terms" type="checkbox" required aria-describedby="terms-error"><label for="terms">Acepto los <a href="#inicio">términos de uso</a> y la <a href="#inicio">política de privacidad</a>.</label></div>
+                <p class="field-error terms-error" id="terms-error" role="alert"></p>
+                <p class="form-error" id="register-form-error" role="alert" aria-live="assertive"></p>
+                <button class="button signup-submit" type="submit">Crear mi cuenta gratis <span aria-hidden="true">→</span></button>
+              </form>
+              <p class="signup-login">¿Ya tienes una cuenta? <button class="auth-switch" id="show-login" type="button">Inicia sesión</button></p>
+              <p class="signup-trust"><span aria-hidden="true">✓</span> Sin tarjeta de crédito <i>·</i> Configuración en menos de 2 minutos</p>
             </div>
-            <form class="signup-form" id="signup-form" novalidate>
-              <div class="form-field">
-                <label for="full-name">Nombre completo</label>
-                <input id="full-name" name="full-name" type="text" placeholder="Ej. Carlos Hernández" autocomplete="name" required aria-describedby="full-name-error">
-                <p class="field-error" id="full-name-error" role="alert"></p>
-              </div>
-              <div class="form-field">
-                <label for="email">Correo electrónico</label>
-                <input id="email" name="email" type="email" placeholder="nombre@correo.com" autocomplete="email" required aria-describedby="email-error">
-                <p class="field-error" id="email-error" role="alert"></p>
-              </div>
-              <div class="form-field">
-                <label for="password">Contraseña</label>
-                <div class="password-input"><input id="password" name="password" type="password" placeholder="Mínimo 8 caracteres" autocomplete="new-password" required aria-describedby="password-error"><button class="password-toggle" type="button" aria-label="Mostrar contraseña" aria-pressed="false"><span aria-hidden="true">◉</span></button></div>
-                <p class="field-error" id="password-error" role="alert"></p>
-              </div>
-              <div class="form-field">
-                <label for="goal">¿Qué quieres mejorar?</label>
-                <select id="goal" name="goal" required aria-describedby="goal-error">
-                  <option value="" selected disabled>Selecciona una opción</option>
-                  <option value="tareas">Organizar mis tareas</option>
-                  <option value="concentracion">Mejorar mi concentración</option>
-                  <option value="habitos">Crear mejores hábitos</option>
-                  <option value="proyectos">Administrar mis proyectos</option>
-                </select>
-                <p class="field-error" id="goal-error" role="alert"></p>
-              </div>
-              <div class="terms-field">
-                <input id="terms" name="terms" type="checkbox" required aria-describedby="terms-error">
-                <label for="terms">Acepto los <a href="#inicio">términos de uso</a> y la <a href="#inicio">política de privacidad</a>.</label>
-              </div>
-              <p class="field-error terms-error" id="terms-error" role="alert"></p>
-              <button class="button signup-submit" type="submit">Crear mi cuenta gratis <span aria-hidden="true">→</span></button>
-            </form>
-            <p class="signup-login">¿Ya tienes una cuenta? <a href="#registro">Inicia sesión</a></p>
-            <p class="signup-trust"><span aria-hidden="true">✓</span> Sin tarjeta de crédito <i>·</i> Configuración en menos de 2 minutos</p>
-            <div class="signup-success" id="signup-success" role="status" aria-live="polite" hidden>
+            <div class="auth-view" id="login-view" hidden>
+              <div class="signup-heading"><span class="signup-logo" aria-hidden="true">f</span><h2>Bienvenido de nuevo</h2><p>Continúa donde lo dejaste y vuelve a enfocarte en lo importante.</p></div>
+              <form class="signup-form" id="login-form" novalidate>
+                <div class="form-field"><label for="login-email">Correo electrónico</label><input id="login-email" name="email" type="email" placeholder="nombre@correo.com" autocomplete="email" required aria-describedby="login-email-error"><p class="field-error" id="login-email-error" role="alert"></p></div>
+                <div class="form-field"><label for="login-password">Contraseña</label><div class="password-input"><input id="login-password" name="password" type="password" placeholder="Tu contraseña" autocomplete="current-password" required aria-describedby="login-password-error"><button class="password-toggle" type="button" data-password-toggle="login-password" aria-label="Mostrar contraseña" aria-pressed="false"><span aria-hidden="true">◉</span></button></div><p class="field-error" id="login-password-error" role="alert"></p></div>
+                <p class="form-error" id="login-form-error" role="alert" aria-live="assertive"></p>
+                <button class="button signup-submit" type="submit">Iniciar sesión <span aria-hidden="true">→</span></button>
+              </form>
+              <p class="signup-login">¿No tienes una cuenta? <button class="auth-switch" id="show-register" type="button">Crear cuenta</button></p>
+            </div>
+            <div class="signup-success" id="auth-state" role="status" aria-live="polite" hidden>
               <span class="success-icon" aria-hidden="true">✓</span>
-              <h2>¡Cuenta creada correctamente!</h2>
-              <p>Tu espacio de productividad está listo.</p>
-              <button class="success-back" id="success-back" type="button">Volver al formulario</button>
+              <h2 id="auth-title"></h2>
+              <p id="auth-message"></p>
+              <button class="button signup-submit" id="auth-continue" type="button">Explorar Focusly</button>
+              <button class="success-back" id="auth-logout" type="button">Cerrar sesión</button>
             </div>
           </div>
         </div>
